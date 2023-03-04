@@ -132,18 +132,18 @@ const modalData= async id =>{
             <div>
                 <h1>Integration</h1>
                 <ul>
-                  <li>${modals.integrations[0]}</li>
-                    <li>${modals.integrations[1]}</li>
-                    <li>${modals.integrations[2]}</li>
-                </ul>
+                <li>${modals.integrations[0] ? modals.integrations[0] :'No Data Found'}</li>
+                  <li>${modals.integrations[1] ? modals.integrations[1] :'No Data Found' }</li>
+                  <li>${modals.integrations[2]?modals.integrations[2]:'No Data Found'}</li>
+              </ul>
             </div>
         </div>
     </div>
 
     <div class="border border-secondary rounded p-3">
         <img class="imgsiz rounded border border-white" src="${modals.image_link[0]}" alt="">
-        <h5 class="text-center mt-5">${modals.input_output_examples[0].input}</h5>
-        <h6>${modals.input_output_examples[0].output}</h6>
+        <h5 class="text-center mt-5">${modals.input_output_examples[0].input ?modals.input_output_examples[0].input :'No Not Yet!Take a Break!!!'}</h5>
+        <h6>${modals.input_output_examples[0].output ? modals.input_output_examples[0].output:'No Not Yet!Take a Break!!!'}</h6>
     </div>
 
 </div>
