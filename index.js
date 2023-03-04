@@ -116,6 +116,29 @@ const displayModalData = modals =>{
 
         </div>
 
+        <div class="d-flex gap-2">
+            <div>
+                <h1>Features</h1>
+                
+                <ul>
+                    <li>${modals.features[1].feature_name}</li>
+                    <li>${modals.features[2].feature_name}</li>
+                    <li>${modals.features[3].feature_name}</li>
+                
+                </ul>
+
+            </div>
+            <div>
+                <h1>Integration</h1>
+                <ul>
+                  <li>${modals.integrations[0]}</li>
+                    <li>${modals.integrations[1]}</li>
+                    <li>${modals.integrations[2]}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
         `;
 
         
