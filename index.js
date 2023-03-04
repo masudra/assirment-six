@@ -89,4 +89,38 @@ const modalData= async id =>{
     displayModalData(data.data);
 }
 
+const displayModalData = modals =>{
+    // console.log(modals);
+    // const allmodals = document.getElementById('cardsModalLabel');
+    // allmodals.innerText = modals.tool_name;
+    const modalBody =document.getElementById('modalInfo');
+    modalBody.innerHTML =`
+    <div class="d-flex gap-3 mt-2 w-">
+    <div class="mybg border border-danger rounded p-3">
+     <p>${modals.description}</p>
+        <div class=" d-flex justify-content-between gap-2 ">
+            <div class="bg-light rounded">
+            <h6 class="p-2">${modals.pricing[0].plan}</h6>
+            <h6 class="p-2">${modals.pricing[0].price}</h6>
+            </div>
+
+            <div class="bg-light rounded">
+            <h6 class="p-2">${modals.pricing[1].plan}</h6>
+            <h6 class="p-2">${modals.pricing[1].price}</h6>
+            </div>
+        
+            <div class="bg-light rounded">
+            <h6 class="p-2">${modals.pricing[2].plan}</h6>
+            <h6 class="p-2">${modals.pricing[2].price}</h6>
+            </div>
+
+        </div>
+
+        `;
+
+        
+    }
+    modalData();
+    
+
 
