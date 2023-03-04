@@ -2,25 +2,23 @@ const aiLinkFun= async () =>{
     const url =`https://openapi.programming-hero.com/api/ai/tools`;
     const res = await fetch(url);
     const data = await res.json();
-    displayData(data.data.tools);
+    displayData(data.data.tools.slice(0,6));
 }
-
 
 const displayData = cards =>{
     const allCards = document.getElementById('card-make');
 
     // See More Btn 
     const showAll = document.getElementById('show-all-btn')
-    if(cards.length >6){
-        cards =cards.slice(0,6);
+    if(cards.length === 6){
+        // cards =cards.slice(0,6);
         showAll.classList.remove('d-none')
     }
     else{
         showAll.classList.add('d-none')
     }
-
-         
     
+    allCards.innerHTML ='';
    cards.forEach(card =>{
         const cardCreate = document.createElement('div')
         cardCreate.classList.add('col')
@@ -66,15 +64,21 @@ const displayData = cards =>{
         lode.classList.add('d-none')
     }
 }
+
 // click btn for show all  card 
 document.getElementById('btn-show-all').addEventListener('click',function(){
     trogelspiner(true);
+    const allCards= async () =>{
+        const url =`https://openapi.programming-hero.com/api/ai/tools`;
+        const res = await fetch(url);
+        const data = await res.json();
+        displayData(data.data.tools);
+    }
+    allCards();
     
-   
 });
 
 
-
-
-
 aiLinkFun();
+
+
