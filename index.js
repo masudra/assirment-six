@@ -78,7 +78,15 @@ document.getElementById('btn-show-all').addEventListener('click',function(){
     
 });
 
-
 aiLinkFun();
+
+
+const modalData= async id =>{
+    const url =` https://openapi.programming-hero.com/api/ai/tool/${id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    // console.log(id)
+    displayModalData(data.data);
+}
 
 
