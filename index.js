@@ -5,11 +5,11 @@ const aiLinkFun= async () =>{
     displayData(data.data.tools.slice(0,6));
 }
 
+
 const displayData = cards =>{
     const allCards = document.getElementById('card-make');
-
-    // See More Btn 
-    const showAll = document.getElementById('show-all-btn')
+//  See More Btn 
+const showAll = document.getElementById('show-all-btn')
     if(cards.length === 6){
         // cards =cards.slice(0,6);
         showAll.classList.remove('d-none')
@@ -19,7 +19,7 @@ const displayData = cards =>{
     }
     
     allCards.innerHTML ='';
-   cards.forEach(card =>{
+    cards.forEach(card =>{
         const cardCreate = document.createElement('div')
         cardCreate.classList.add('col')
         cardCreate.innerHTML =`
@@ -36,7 +36,7 @@ const displayData = cards =>{
                         <p> <i class="fa-solid fa-calendar-days"></i> ${card.published_in}</p>
                         </div>
                         <div class="my-auto">
-                        <button type="button" class="border border-0 bg-white text-danger" data-bs-toggle="modal" data-bs-target="#cardsModal">
+                        <button onclick="modalData('${card.id}')" type="button" class="border border-0 bg-white text-danger" data-bs-toggle="modal" data-bs-target="#cardsModal">
                         <i class="fs-1 fa-regular fa-circle-right"></i>
   </button>
                          </div>
@@ -65,6 +65,7 @@ const displayData = cards =>{
     }
 }
 
+aiLinkFun();
 // click btn for show all  card 
 document.getElementById('btn-show-all').addEventListener('click',function(){
     trogelspiner(true);
@@ -76,9 +77,8 @@ document.getElementById('btn-show-all').addEventListener('click',function(){
     }
     allCards();
     
+   
 });
-
-aiLinkFun();
 
 
 const modalData= async id =>{
@@ -89,7 +89,7 @@ const modalData= async id =>{
     displayModalData(data.data);
 }
 
-const displayModalData = modals =>{
+ const displayModalData = modals =>{
     // console.log(modals);
     // const allmodals = document.getElementById('cardsModalLabel');
     // allmodals.innerText = modals.tool_name;
@@ -116,6 +116,7 @@ const displayModalData = modals =>{
 
         </div>
 
+       
         <div class="d-flex gap-2">
             <div>
                 <h1>Features</h1>
@@ -147,11 +148,9 @@ const displayModalData = modals =>{
 
 </div>
 
-`;
+    `;
 
         
- }
- modalData();
-    
-
+}
+modalData();
 
