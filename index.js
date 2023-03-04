@@ -139,11 +139,19 @@ const displayModalData = modals =>{
         </div>
     </div>
 
-        `;
+    <div class="border border-secondary rounded p-3">
+        <img class="imgsiz rounded border border-white" src="${modals.image_link[0]}" alt="">
+        <h5 class="text-center mt-5">${modals.input_output_examples[0].input}</h5>
+        <h6>${modals.input_output_examples[0].output}</h6>
+    </div>
+
+</div>
+
+`;
 
         
-    }
-    modalData();
+ }
+ modalData();
     
 
 
